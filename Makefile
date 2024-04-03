@@ -24,9 +24,10 @@ install: $(VENV)/bin/activate
 .PHONY: wheel
 wheel: dist/$(PACKAGE)-$(VERSION)-py3-none-any.whl
 
-dist/$(PACKAGE)-$(VERSION)-py3-none-any.whl: $(VENV)/bin/activate
+dist/$(PACKAGE)-$(VERSION)-py3-none-any.whl dist/$(PACKAGE)-$(VERSION).tar.gz: $(VENV)/bin/activate
 	$(ACTIVATE_VENV) && python3 -m build
 	mv dist/$(PACKAGE)-$(VERSION_UPSTREAM)-py3-none-any.whl dist/$(PACKAGE)-$(VERSION)-py3-none-any.whl
+	mv dist/$(PACKAGE)-$(VERSION_UPSTREAM).tar.gz dist/$(PACKAGE)-$(VERSION).tar.gz
 
 .PHONY: launch
 launch:
