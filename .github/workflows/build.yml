@@ -23,7 +23,7 @@ jobs:
         id: test_consistency
         if: startsWith(github.ref, 'refs/tags/')
         run: |
-          tests/test-version-tag
+          bin/test-version-tag
           echo "VERSION=$(bin/print-version)" >> "$GITHUB_OUTPUT"
       - name: Create release
         id: create_release
