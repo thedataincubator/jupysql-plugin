@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "$(jq -r .version version-tdi.json)"
