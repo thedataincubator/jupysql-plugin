@@ -1,9 +1,6 @@
 name: Build
 
-on:
-  push:
-    branches:
-      - tdi
+on: [push]
 
 permissions:
   contents: write
