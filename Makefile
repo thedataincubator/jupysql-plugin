@@ -30,7 +30,7 @@ dist/$(PACKAGE)-$(VERSION)-py3-none-any.whl dist/$(PACKAGE)-$(VERSION).tar.gz: $
 	mv dist/$(PACKAGE)-$(VERSION_UPSTREAM).tar.gz dist/$(PACKAGE)-$(VERSION).tar.gz
 
 .PHONY: launch
-launch:
+launch: $(VENV)/bin/activate
 	$(ACTIVATE_VENV) && jupyter-lab
 
 .PHONY: clean
